@@ -83,16 +83,12 @@ main {
   padding-left: 1.25rem;
 }
 
-nav {
-  margin-top: 0.5rem;
-}
-
 /* Nav list now sits horizontally */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;              /* space between links */
-  margin: 0;                /* no vertical gap */
+  gap: 1.5rem;             
+  margin: 0;               
   padding: 0;
 }
 
@@ -104,7 +100,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #ffcc00;           /* accent on hover */
+  color: #ffcc00;          
 }
 
 .intro-section {
