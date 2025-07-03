@@ -1,9 +1,282 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Pampanga State University Dorms</title>
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bacolor Accredited Dormitories</title>
+  <!--
+    =====================================
+    Basic Style Sheet
+    =====================================
+    Change the CSS variables in :root to apply the official
+    USC & PamSU palette once you have the hex codes.
+  -->
+  <style>
+    :root {
+      /* TODO: Replace these placeholders with real school colors */
+      --usc-color: #005a9c;   /* University of the Assumed USC */
+      --pamsu-color: #f9a825; /* Pampanga State University */
 
-    </body>
+      /* Derived palette */
+      --primary-color: var(--usc-color);
+      --accent-color: var(--pamsu-color);
+      --bg-color: #f5f5f5;
+      --card-bg: #fff;
+      --text-color: #333;
+    }
+
+    /* Base ------------------------------ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.5;
+    }
+
+    /* Layout ---------------------------- */
+    header {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 1rem 2rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* Controls -------------------------- */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .controls input,
+    .controls select {
+      flex: 1 1 200px;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* Grid & Cards ---------------------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .location {
+      font-size: 0.875rem;
+      color: #666;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin: 0 0.25rem 0.25rem 0;
+    }
+
+    /* Dark mode ------------------------- */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --card-bg: #1e1e1e;
+        --text-color: #ddd;
+      }
+      footer {
+        background: #000;
+        color: #777;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== Header ========== -->
+  <header>
+    <h1>Bacolor Accredited Dormitories</h1>
+  </header>
+
+  <!-- ========== Main Content ========== -->
+  <main>
+    <!-- Filters / Search -->
+    <section class="controls" aria-label="dormitory filters">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search dormitory..."
+        aria-label="Search dormitories"
+      />
+      <select id="amenityFilter" aria-label="Filter by amenity">
+        <option value="">All amenities</option>
+        <option value="WiFi">Wi‑Fi</option>
+        <option value="Laundry">Laundry</option>
+        <option value="Parking">Parking</option>
+      </select>
+      <select id="sortSelect" aria-label="Sort dormitories">
+        <option value="none">Sort by</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+      </select>
+    </section>
+
+    <!-- Grid -->
+    <section id="dormGrid" class="card-grid"></section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <small>&copy; <span id="year"></span> Bacolor City Hall</small>
+  </footer>
+
+  <!-- ========== Scripts ========== -->
+  <script>
+    /* -------------------------------------
+       Mock data — replace with live data or CMS later
+    ------------------------------------- */
+    const dorms = [
+      {
+        name: "Test Dorm 1",
+        price: 2500,
+        amenities: ["WiFi", "Laundry"],
+        location: "Barangay Talba"
+      },
+      {
+        name: "Test Dorm 2",
+        price: 1800,
+        amenities: ["Parking"],
+        location: "Barangay Cabambangan"
+      },
+      {
+        name: "Test Dorm 3",
+        price: 3000,
+        amenities: ["WiFi", "Parking", "Laundry"],
+        location: "Barangay Calibutbut"
+      },
+      {
+        name: "Test Dorm 4",
+        price: 2200,
+        amenities: ["WiFi"],
+        location: "Barangay San Vicente"
+      }
+    ];
+
+    /* -------------------------------------
+       DOM refs
+    ------------------------------------- */
+    const dormGrid = document.getElementById("dormGrid");
+    const searchInput = document.getElementById("searchInput");
+    const amenityFilter = document.getElementById("amenityFilter");
+    const sortSelect = document.getElementById("sortSelect");
+
+    /* -------------------------------------
+       Rendering helpers
+    ------------------------------------- */
+    function renderDorms(data) {
+      dormGrid.innerHTML = "";
+
+      if (data.length === 0) {
+        dormGrid.innerHTML = "<p>No dormitories found.</p>";
+        return;
+      }
+
+      data.forEach((dorm) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div>
+            <h2>${dorm.name}</h2>
+            <p class="price">₱${dorm.price.toLocaleString()}</p>
+            <div>
+              ${dorm.amenities
+                .map((a) => `<span class="badge">${a}</span>`) 
+                .join("")}
+            </div>
+          </div>
+          <p class="location">${dorm.location}</p>
+        `;
+        dormGrid.appendChild(card);
+      });
+    }
+
+    /* -------------------------------------
+       Filtering & Sorting
+    ------------------------------------- */
+    function filterAndSort() {
+      let filtered = dorms.filter((d) =>
+        d.name.toLowerCase().includes(searchInput.value.toLowerCase())
+      );
+
+      if (amenityFilter.value) {
+        filtered = filtered.filter((d) =>
+          d.amenities.includes(amenityFilter.value)
+        );
+      }
+
+      if (sortSelect.value === "price-low") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortSelect.value === "price-high") {
+        filtered.sort((a, b) => b.price - a.price);
+      }
+
+      renderDorms(filtered);
+    }
+
+    /* -------------------------------------
+       Event listeners
+    ------------------------------------- */
+    searchInput.addEventListener("input", filterAndSort);
+    amenityFilter.addEventListener("change", filterAndSort);
+    sortSelect.addEventListener("change", filterAndSort);
+
+    /* -------------------------------------
+       Init
+    ------------------------------------- */
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderDorms(dorms);
+  </script>
+</body>
 </html>
