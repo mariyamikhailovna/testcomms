@@ -101,7 +101,7 @@ nav {
 .intro-section {
   text-align: center;
   padding: 3rem 1rem 2rem;
-  background-color: #d5cc01; 
+  background-color: #dfc107; 
   border-radius: 12px;
   margin-bottom: 2rem;
 }
@@ -109,13 +109,13 @@ nav {
 .motto {
   font-size: 2rem;
   font-weight: bold;
-  color: #6c011b;
+  color: #8c0100;
   margin-bottom: 0.5rem;
 }
 
 .description {
   font-size: 1rem;
-  color: #555;
+  color: #f7f7f7;
   max-width: 600px;
   margin: 0 auto;
 }
