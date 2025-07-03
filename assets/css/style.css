@@ -97,3 +97,25 @@ nav {
 .nav-links li a:hover {
   color: #ffcc00;
 }
+
+.intro-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background-color: #d5cc01; 
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.motto {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6c011b;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
