@@ -16,7 +16,6 @@ footer{
   padding: 1.5rem 1rem;
   background-color: #c2602f;
   color: white;
-  margin-bottom: 2rem;
 }
 
 body {
@@ -33,7 +32,6 @@ main {
   margin: 0 auto;
 }
 
-/* Main layout */
 .dorm-list {
   display: flex;
   flex-wrap: wrap;
