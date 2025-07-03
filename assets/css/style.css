@@ -100,14 +100,14 @@ main {
 }
 
 .nav-links a:hover {
-  color: #ffcc00;          
+  color: #e6bb58;          
 }
 
 .intro-section {
   text-align: center;
   margin-top: 0;
   padding: 3rem 1rem 2rem;
-  background-color: #ffcc00; 
+  background-color: #e6bb58; 
   margin-bottom: 2rem;
   width: 100%;
 }
