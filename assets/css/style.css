@@ -6,7 +6,7 @@
 
 body {
   font-family: sans-serif;
-  background: #f7f7f7;
+  background: #c16330;
   color: #333;
   padding: 2rem;
 }
@@ -14,7 +14,7 @@ body {
 header, footer {
   text-align: center;
   padding: 1rem 0;
-  background-color: #c5bd00;
+  background-color: #bb0408;
   color: white;
   margin-bottom: 2rem;
 }
