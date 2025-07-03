@@ -3,20 +3,32 @@ const dorms = [
   {
     name: "Dorm 1",
     price: 2500,
-    location: "Barangay Talba",
-    amenities: ["Wi-Fi", "Laundry"]
+    location: "Barangay Mariya",
+    amenities: ["Wi-Fi", "Laundry", "Mariya Mikhailovna Kujou", "Everything]
   },
   {
     name: "Dorm 2",
     price: 1800,
-    location: "Barangay Cabambangan",
-    amenities: ["Parking"]
+    location: "Barangay Winner",
+    amenities: ["Parking", "Yotsuba Nakano"]
   },
   {
     name: "Dorm 3",
     price: 3000,
-    location: "Barangay Calibutbut",
+    location: "Barangay Akane",
+    amenities: ["Wi-Fi", "Parking", "Kurokawa"]
+  }
+    {
+    name: "Dorm 4",
+    price: 3000,
+    location: "Barangay 123",
     amenities: ["Wi-Fi", "Parking", "Laundry"]
+  }
+    {
+    name: "Bad Dorm",
+    price: 1,
+    location: "Barangay Do not Live",
+    amenities: ["Rei Ayanami"]
   }
 ];
 
