@@ -8,16 +8,15 @@ body {
   font-family: sans-serif;
   background: #f7f7f7;
   color: #333;
-  padding: 2rem;
+  padding: 0;
   overflow-y: scroll;
 }
 
 header{
-  text-align: center;
-  padding: 1rem 0;
   background-color: #8c0100;
   color: white;
-  margin-bottom: 2rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
 }
 
 footer{
