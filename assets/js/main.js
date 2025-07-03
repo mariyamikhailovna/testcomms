@@ -50,7 +50,7 @@ function createDorms() {
     card.innerHTML = `
       <h2>${dorm.name}</h2>
       <a class="details-link"
-         href="assets/subhtml/${dorm.id}.html">
+         href="assets/subhtmls/${dorm.id}.html">
          View details →
       </a>
     `;
