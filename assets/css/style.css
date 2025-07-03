@@ -64,6 +64,7 @@ main {
   transition: transform 0.2s ease;
   flex: 1 1 300px;
   max-width: 400px;
+  position: relative;
 }
 
 .dorm-card:hover {
@@ -73,14 +74,19 @@ main {
 .dorm-card h2 {
   margin-bottom: 0.5rem;
 }
-
-.dorm-card p {
-  margin: 0.25rem 0;
+.details-link {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #004c3f;
+  transition: color 0.2s ease;
 }
 
-.dorm-card ul {
-  margin-top: 0.5rem;
-  padding-left: 1.25rem;
+.details-link:hover {
+  color: #ffcc00;
 }
 
 /* Nav list now sits horizontally */
