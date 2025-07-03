@@ -11,14 +11,20 @@ body {
   padding: 2rem;
 }
 
-header, footer {
+header{
   text-align: center;
   padding: 1rem 0;
-  background-color: #bb0408;
+  background-color: #8c0100;
   color: white;
   margin-bottom: 2rem;
 }
-
+footer{
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #c2602f;
+  color: white;
+  margin-bottom: 2rem;
+}
 /* Main layout */
 .dorm-list {
   display: grid;
