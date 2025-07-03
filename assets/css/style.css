@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  padding: 2rem;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #004c3f;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+/* Main layout */
+.dorm-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.dorm-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.dorm-card:hover {
+  transform: translateY(-4px);
+}
+
+.dorm-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.dorm-card p {
+  margin: 0.25rem 0;
+}
+
+.dorm-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
