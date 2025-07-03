@@ -67,3 +67,26 @@ main {
   margin-top: 0.5rem;
   padding-left: 1.25rem;
 }
+
+nav {
+  margin-top: 0.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
