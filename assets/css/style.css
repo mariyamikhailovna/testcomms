@@ -4,14 +4,6 @@
   padding: 0;
 }
 
-body {
-  font-family: sans-serif;
-  background: #f7f7f7;
-  color: #333;
-  padding: 0;
-  overflow-y: scroll;
-}
-
 header{
   background-color: #8c0100;
   color: white;
@@ -21,10 +13,24 @@ header{
 
 footer{
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 1rem;
   background-color: #c2602f;
   color: white;
   margin-bottom: 2rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  padding: 0;
+  overflow-y: scroll;
 }
 
 /* Main layout */
