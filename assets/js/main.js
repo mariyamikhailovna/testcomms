@@ -17,13 +17,13 @@ const dorms = [
     price: 3000,
     location: "Barangay Akane",
     amenities: ["Wi-Fi", "Parking", "Kurokawa"]
-  }
+  },
     {
     name: "Dorm 4",
     price: 3000,
     location: "Barangay 123",
     amenities: ["Wi-Fi", "Parking", "Laundry"]
-  }
+  },
     {
     name: "Bad Dorm",
     price: 1,
