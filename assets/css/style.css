@@ -27,19 +27,25 @@ footer{
   color: white;
   margin-bottom: 2rem;
 }
+
 /* Main layout */
 .dorm-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .dorm-card {
   background: white;
   padding: 1.25rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+  flex: 1 1 300px;
+  max-width: 400px;
 }
 
 .dorm-card:hover {
