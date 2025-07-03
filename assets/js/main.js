@@ -51,7 +51,7 @@ function createDorms() {
       <h2>${dorm.name}</h2>
 
       <a class="details-link"
-         href="assets/subhtmls/${dorm.id}.html">
+         href="assets/subhtml/${dorm.id}.html">
          View details →
       </a>
     `;
