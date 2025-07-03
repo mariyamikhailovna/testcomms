@@ -13,8 +13,16 @@ html, body {
 header{
   background-color: #8c0100;
   color: white;
-  padding: 1.5rem 1rem;
-  text-align: center;
+  display: flex;            /* put h1 and nav side‑by‑side */
+  align-items: center;      /* vertically center them */
+  justify-content: space-between;  /* push nav to the right */
+  padding: 0.75rem 1rem;    /* smaller top/bottom */
+}
+
+header h1 {
+  font-size: 1.25rem;       /* adjust to taste */
+  margin: 0;                /* kill default margins */
+  line-height: 1;           /* keeps it tight */
 }
 
 footer{
@@ -79,23 +87,24 @@ nav {
   margin-top: 0.5rem;
 }
 
+/* Nav list now sits horizontally */
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;              /* space between links */
+  margin: 0;                /* no vertical gap */
   padding: 0;
 }
 
-.nav-links li a {
+.nav-links a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #fff;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 
-.nav-links li a:hover {
-  color: #ffcc00;
+.nav-links a:hover {
+  color: #ffcc00;           /* accent on hover */
 }
 
 .intro-section {
