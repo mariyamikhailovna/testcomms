@@ -24,7 +24,7 @@ const dorms = [
 const container = document.querySelector(".dorm-list");
 
 // Function to create and insert each dorm card
-function renderDorms() {
+function createDorms() {
   dorms.forEach(dorm => {
     const card = document.createElement("article");
     card.classList.add("dorm-card");
@@ -46,4 +46,4 @@ function renderDorms() {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Run the render function
-renderDorms();
+createDorms();
