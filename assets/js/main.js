@@ -1,4 +1,4 @@
-// Dormitory data
+// ==== Dormitory data =========================================
 const dorms = [
   {
     id: "dorm_1",
@@ -21,14 +21,14 @@ const dorms = [
     location: "Barangay Akane",
     amenities: ["Wi-Fi", "Parking", "Kurokawa"]
   },
-    {
+  {
     id: "dorm_4",
     name: "Dorm 4",
     price: 3000,
     location: "Barangay 123",
     amenities: ["Wi-Fi", "Parking", "Laundry"]
   },
-    {
+  {
     id: "dorm_5",
     name: "Bad Dorm",
     price: 1,
@@ -37,29 +37,32 @@ const dorms = [
   }
 ];
 
-// Reference to the section
-const container = document.querySelector(".dorm-list");
+// ==== Render dorm cards ======================================
+function renderDormCards() {
+  const container = document.querySelector(".dorm-list");
+  if (!container) {
+    const msg = document.createElement("p");
+    msg.textContent = "Dorm list not found. Check if .dorm-list exists.";
+    document.body.prepend(msg);
+    return;
+  }
 
-// Function to create and insert each dorm card
-function createDorms() {
   container.innerHTML = "";
+
   dorms.forEach(dorm => {
     const card = document.createElement("article");
     card.classList.add("dorm-card");
 
     card.innerHTML = `
       <h2>${dorm.name}</h2>
-      <a class="details-link"
-         href="assets/subhtmls/${dorm.id}.html">
-         View details →
+      <a class="details-link" href="assets/subhtml/${dorm.id}.html">
+        View details →
       </a>
     `;
+
     container.appendChild(card);
   });
 }
 
-// Auto-fill the copyright year
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Run the render function
-createDorms();
+// ==== Run immediately (script must be at bottom of HTML) =====
+renderDormCards();
