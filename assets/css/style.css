@@ -107,7 +107,7 @@ main {
   text-align: center;
   margin-top: 0;
   padding: 3rem 1rem 2rem;
-  background-color: #f7f7f7; 
+  background-color: #ffcc00; 
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -121,7 +121,7 @@ main {
 .motto {
   font-size: 2rem;
   font-weight: bold;
-  color: #ffcc00;
+  color: #f7f7f7;
   margin-bottom: 0.5rem;
 }
 
