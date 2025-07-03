@@ -4,7 +4,7 @@ const dorms = [
     name: "Dorm 1",
     price: 2500,
     location: "Barangay Mariya",
-    amenities: ["Wi-Fi", "Laundry", "Mariya Mikhailovna Kujou", "Everything]
+    amenities: ["Wi-Fi", "Laundry", "Mariya Mikhailovna Kujou", "Everything"]
   },
   {
     name: "Dorm 2",
